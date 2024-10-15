@@ -76,3 +76,8 @@ button {
   background-color: #efefef;
   text-align: center;
 }
+
+.footer a {
+  margin: 0 20px;
+  color: #120206;
+}
