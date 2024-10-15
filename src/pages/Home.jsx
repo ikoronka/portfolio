@@ -1,0 +1,29 @@
+import React from 'react';
+import '../index.css';
+import logo from '../images/ikoronka.svg';
+import { ReactTyped } from "react-typed";
+
+export default function Home() {
+
+    return (
+      <div>
+        <img src={logo} id="logo" alt="logo ikoronka" />
+        <h1>Welcome to my app</h1>
+
+        <div id="centeredText">
+          <div>
+            <ReactTyped 
+            strings={[
+              "Hi, I'm <br> <span style='color: #FFAB00; font-weight: 600' >a teacher</span>",
+              "Hi, I'm <br> <span style='color: #009CEA; font-weight: 600' >a dev</span>",
+              "Hi, I'm <br> <span style='color: #74AF00; font-weight: 600' >a student</span>",
+              "Hi, I'm <br> <span style='color: #E22E57; font-weight: 600' >Amy</span>"
+            ]} 
+            typeSpeed={40}
+            className='titleText' />
+            <br />
+          </div>
+        </div>
+      </div>
+    );
+}

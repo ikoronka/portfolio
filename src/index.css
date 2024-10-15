@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #120206;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#logo {
+  position: absolute;
+  top: 5%;
+  left: 2%;
+}
+
+#navBar {
+  background-color: #FDEDF1;
+  padding: 1.5em;
+  border-radius: 0.5em 0.5em 0 0;
+  width: 80%;
+}
+
+.titleText {
+  color: #FDEDF1;
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 5em;
+}
+
+.centeredText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
