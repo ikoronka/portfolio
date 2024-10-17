@@ -8,7 +8,6 @@ export default function Home() {
     return (
       <div>
         <img src={logo} id="logo" alt="logo ikoronka" />
-        <h1>Welcome to my app</h1>
 
         <div id="centeredText">
           <div>
