@@ -7,7 +7,9 @@ export default function Home() {
 
     return (
       <div className='fullPage'>
-        <img src={logo} id="logo" alt="logo ikoronka" />
+        <div id="top">
+          <img src={logo} id="logo" alt="logo ikoronka" />
+        </div>
 
         <div id="centeredText">
           <div>

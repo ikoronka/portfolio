@@ -30,6 +30,18 @@ html, body {
   place-items: center;
 }
 
+#top {
+  width: 100%;
+  background-color: #120206;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999; /* Ensure it stays above other content */
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Adjust padding as needed */
+  height: 80px; /* Set a fixed height to ensure it contains the full height of the logo */
+}
 
 #logo {
   position: fixed; /* Keeps the image fixed in the viewport */

@@ -24,7 +24,8 @@
     align-items: center;
     cursor: pointer;
     z-index: 25; /* Vysoká priorita pro hamburger */
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
+    background-color: transparent;
 }
 
 .hamburger.open {
@@ -85,7 +86,6 @@
     bottom: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #FDEDF1;
     border-radius: 15px 15px 0 0;
     height: 50px;
 }
@@ -96,7 +96,7 @@
 
 .nav-desktop li a {
     text-decoration: none;
-    color: #120206;
+    color: #FDEDF1;
     font-size: 1.2rem;
     padding: 10px 20px;
     transition: all 0.4s ease;
