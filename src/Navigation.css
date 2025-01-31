@@ -99,10 +99,35 @@
     color: #120206;
     font-size: 1.2rem;
     padding: 10px 20px;
+    transition: all 0.4s ease;
 }
 
-.nav-desktop li:first-child a {
-    background-color: yellow;
+.nav-desktop:hover {
+    transition: all 0.4s;
+    height: 62px;
+}
+
+.nav-desktop li a:hover {
+    transition: all 0.4s ease;
+    border-radius: 15px 15px 0 0;
+    font-size: 1.5rem;
+    padding: 20px 30px;
+}
+
+.nav-desktop li:first-child a:hover {
+    background-color: #E22E57;
+}
+
+.nav-desktop li:nth-child(2) a:hover {
+    background-color: #FFAB00;
+}
+
+.nav-desktop li:nth-child(3) a:hover {
+    background-color: #009CEA;
+}
+
+.nav-desktop li:nth-child(4) a:hover {
+    background-color: #74AF00;
 }
 
 /* Responzivní chování */
