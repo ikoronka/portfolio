@@ -5,7 +5,7 @@ export default function Button({ value }) {
 
 
     return (
-      <button>
+      <button className='navButton'>
         {value}
       </button>
     );

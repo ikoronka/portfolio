@@ -6,7 +6,7 @@ import { ReactTyped } from "react-typed";
 export default function Home() {
 
     return (
-      <div>
+      <div className='fullPage'>
         <img src={logo} id="logo" alt="logo ikoronka" />
 
         <div id="centeredText">
