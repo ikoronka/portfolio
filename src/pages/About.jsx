@@ -1,6 +1,5 @@
 import React from 'react';
 import '../index.css';
-import logo from '../images/ikoronka.svg';
 
 export default function About() {
 
