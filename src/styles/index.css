@@ -96,3 +96,25 @@ code {
     font-size: 4em;
   }
 }
+
+#aboutSection {
+  display: flex;
+  flex-direction: column; /* Vertikální uspořádání prvků */
+  align-items: center; /* Horizontální zarovnání na střed */
+  justify-content: flex-start; /* Zarovnání prvků nahoru */
+  gap: 10px; /* Snížíme mezeru mezi prvky */
+  margin-top: 20px; /* Přidáme menší odsazení od nadpisu */
+}
+
+#aboutSection h1 {
+  margin: 60px;
+}
+
+.monoText {
+  font-family: "DM Mono", monospace;
+}
+
+.descrText {
+  font-size: large;
+  text-align: center;
+}

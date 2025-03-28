@@ -1,5 +1,5 @@
 import React from 'react';
-import '../index.css';
+import '../styles/index.css';
 import logo from '../images/ikoronka.svg';
 import { ReactTyped } from "react-typed";
 
