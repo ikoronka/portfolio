@@ -1,0 +1,9 @@
+#aboutSection h1 {
+    position: relative;
+    z-index: 20;
+}
+
+#aboutSection p {
+    position: relative;
+    z-index: 20;
+}

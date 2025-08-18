@@ -1,15 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import '../styles/index.css';
-import profilePic from '../images/profilePic.png';
+import '../styles/About.css';
+import RotatingSquare from '../components/RotatingSquare';
+import rotationImage from '../images/rotation.jpg'; // Update with your image path
 
 export default function About() {
+    const { t } = useTranslation();
+
     return (
         <div className='fullPage' id="about" style={{ color: "white" }}>
             <div id="aboutSection">
-                <h1>About</h1>
-                <img width="300" height="300" src={profilePic} alt="Profile" />
+                <h1>{t('about.title')}</h1>
+                <RotatingSquare
+                    imageUrl={rotationImage}
+                    size={300}
+                    rotationSpeed={10}
+                    squareSize={50}
+                />
                 <p className='monoText descrText'>
-                Programuju a učím programovat &lt;/&gt;
+                    {t('about.description')}
                 </p>
             </div>
         </div>

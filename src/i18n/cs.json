@@ -1,0 +1,24 @@
+{
+  "navigation": {
+    "home": "Domů",
+    "about": "O mně",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "linkedin": "LinkedIn",
+    "email": "E-mail",
+    "github": "GitHub"
+  },
+  "contact": {
+    "title": "Kontaktujte mě",
+    "name": "Jméno",
+    "email": "E-mail",
+    "message": "Zpráva",
+    "send": "Odeslat"
+  },
+  "about": {
+    "title": "O mně",
+    "description": "Programuju a učím programovat </>"
+  }
+}

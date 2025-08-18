@@ -5,6 +5,31 @@
   box-sizing: border-box;
 }
 
+.language-selector {
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.language-selector button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #FDEDF1; /* Match text color to navigation */
+}
+
+.language-selector button.active {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  font-weight: bold;
+}
+
+.language-selector button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -18,7 +43,7 @@ html, body {
 
 /* Adjust .App to inherit 100% height from body instead of 100vh */
 .App {
-  
+
   display: grid;
   place-items: center;
 }
@@ -30,17 +55,29 @@ html, body {
   place-items: center;
 }
 
+/* Top bar styling */
 #top {
   width: 100%;
   background-color: #120206;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999; /* Ensure it stays above other content */
+  z-index: 1;
+  display: flex;
+  justify-content: space-between; /* This will push items to edges */
+  align-items: center;
+  padding: 10px 20px;
+  height: 80px;
+}
+
+.logo-container {
+  flex: 1; /* Takes available space */
+}
+
+.top-right {
   display: flex;
   align-items: center;
-  padding: 10px; /* Adjust padding as needed */
-  height: 80px; /* Set a fixed height to ensure it contains the full height of the logo */
+  justify-content: flex-end;
 }
 
 #logo {
@@ -49,7 +86,7 @@ html, body {
   left: 2%;        /* Adjusts horizontal positioning */
   width: auto;     /* Ensure the width or size doesn't disrupt layout */
   height: auto;    /* Adjust height if needed */
-  z-index: 1000;   /* Ensures it stays above other content */
+  z-index: 2;   /* Ensures it stays above other content */
 }
 
 .titleText {

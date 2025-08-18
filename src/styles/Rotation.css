@@ -1,0 +1,82 @@
+/* Rotating Square Component Styles */
+.rotating-square-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: visible; /* allow the black border to extend outside */
+    border-radius: 12px;
+    background: #000;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.rotating-square-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rotating-square-outer {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: calc(100% + 200px);
+    height: calc(100% + 200px);
+    border: 100px solid #120206;
+    border-radius: 20px;
+    box-sizing: border-box;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.rotating-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 6px solid #E22E57;
+    border-radius: 8px;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 2;
+    background: transparent;
+}
+
+.rotating-borders {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

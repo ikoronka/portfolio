@@ -1,15 +1,11 @@
 import React from 'react';
 import '../styles/index.css';
-import logo from '../images/ikoronka.svg';
 import { ReactTyped } from "react-typed";
 
 export default function Home() {
 
     return (
       <div className='fullPage'>
-        <div id="top">
-          <img src={logo} id="logo" alt="logo ikoronka" />
-        </div>
 
         <div id="centeredText">
           <div>
