@@ -12,12 +12,13 @@ export default function About() {
         <div className='fullPage' id="about" style={{ color: "white" }}>
             <div id="aboutSection">
                 <h1>{t('about.title')}</h1>
-                <RotatingSquare
+                {/* <RotatingSquare
                     imageUrl={rotationImage}
                     size={300}
                     rotationSpeed={10}
                     squareSize={50}
-                />
+                /> */}
+                <img src="../images/profilePic.jpg" alt="" />
                 <p className='monoText descrText'>
                     {t('about.description')}
                 </p>
