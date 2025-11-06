@@ -144,14 +144,19 @@
     /* place in middle column for 3-column grid */
     grid-column: 2 / 3;
     justify-self: center;
-    max-width: 420px;
 }
 
-/* If grid is 2 columns, make the coming-soon span both columns to center nicely */
+/* If grid is 2 columns, center the coming-soon visually while keeping the same width as a single tile */
 @media (max-width: 1024px) {
     .projects-grid > .project-tile:last-child {
+        /* span full grid row so we can center an inner box with single-tile width */
         grid-column: 1 / -1;
-        max-width: 640px;
+    }
+
+    .projects-grid > .project-tile:last-child .project-content {
+        /* make content the width of one column and center it */
+        max-width: calc(50% - 1rem);
+        margin: 0 auto;
     }
 }
 

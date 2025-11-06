@@ -2,33 +2,32 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import '../styles/Contact.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 export default function Contact() {
     const { t } = useTranslation();
 
-    const socialLinks = [
-        { icon: faEnvelope, link: "mailto:amelie.engelmaier@gmail.com", label: "Gmail" },
-        { icon: faGithub, link: "https://github.com/ikoronka", label: "GitHub" },
-        { icon: faLinkedin, link: "https://www.linkedin.com/in/amelie-engelmaierov%C3%A1-a94b4a136/", label: "LinkedIn" }
+    const contacts = [
+        { icon: faGoogle, label: 'Gmail', link: 'https://wikipedia.com' },
+        { icon: faGithub, label: 'GitHub', link: 'https://wikipedia.com' },
+        { icon: faLinkedin, label: 'LinkedIn', link: 'https://wikipedia.com' }
     ];
 
     return (
         <div className='fullPage' id="contact">
             <div className="contact-section">
                 <h1 className="monoText">{t('contact.title')}</h1>
-                <div className="social-icons">
-                    {socialLinks.map((social, index) => (
+                <div className="contact-icons">
+                    {contacts.map((c, i) => (
                         <a
-                            key={index}
-                            href={social.link}
+                            key={i}
+                            href={c.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={social.label}
-                            className="social-icon"
+                            className="contact-icon"
+                            aria-label={c.label}
                         >
-                            <FontAwesomeIcon icon={social.icon} />
+                            <FontAwesomeIcon icon={c.icon} size="3x" />
                         </a>
                     ))}
                 </div>

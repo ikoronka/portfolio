@@ -8,6 +8,12 @@ const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { t } = useTranslation();
 
+    const scrollToTop = (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setIsOpen(false);
+    };
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -19,14 +25,14 @@ const Navigation = () => {
             </button>
             <div className={`fullscreen-nav ${isOpen ? 'active' : ''}`}>
                 <ul className="nav-links">
-                    <li><a href="#home" onClick={toggleMenu}>{t('navigation.home')}</a></li>
+                    <li><a href="#home" onClick={scrollToTop}>{t('navigation.home')}</a></li>
                     <li><a href="#about" onClick={toggleMenu}>{t('navigation.about')}</a></li>
                     <li><a href="#projects" onClick={toggleMenu}>{t('navigation.projects')}</a></li>
                     <li><a href="#contact" onClick={toggleMenu}>{t('navigation.contact')}</a></li>
                 </ul>
             </div>
             <ul className="nav-desktop">
-                <li><a href="#home">{t('navigation.home')}</a></li>
+                <li><a href="#home" onClick={scrollToTop}>{t('navigation.home')}</a></li>
                 <li><a href="#about">{t('navigation.about')}</a></li>
                 <li><a href="#projects">{t('navigation.projects')}</a></li>
                 <li><a href="#contact">{t('navigation.contact')}</a></li>
