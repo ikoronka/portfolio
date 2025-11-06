@@ -1,0 +1,158 @@
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #FDEDF1;
+}
+
+.projects-section h1 {
+    margin-bottom: 2rem;
+    font-family: "DM Mono", monospace;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.project-tile {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.project-tile:hover {
+    transform: translateY(-10px);
+}
+
+.project-content {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.project-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.media-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.media-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-tile:hover .media-wrap img {
+    transform: scale(1.03);
+}
+
+/* Overlay shown on hover */
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    color: #FDEDF1;
+    /* stronger, more readable overlay */
+    background: rgba(0,0,0,0.78);
+    opacity: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(10px);
+    font-family: "DM Mono", monospace;
+    /* additive shadow to make text pop */
+    text-shadow: 0 6px 18px rgba(0,0,0,0.9);
+    box-shadow: inset 0 30px 60px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.project-tile:hover .overlay {
+    opacity: 0.98;
+    transform: translateY(0);
+}
+
+/* Coming soon placeholder */
+.media-wrap.coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.04);
+    color: #FDEDF1;
+    width: 100%;
+    aspect-ratio: 16/9;  /* maintain same aspect ratio as images */
+    min-height: 200px;   /* match the height of image tiles */
+}
+
+.coming-text {
+    font-family: "DM Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Ensure all project tiles have the same width */
+.project-tile {
+    width: 100%;
+}
+
+.project-content h3 {
+    padding: 1rem;
+    margin: 0;
+    font-family: "DM Mono", monospace;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-section {
+        padding: 1rem;
+    }
+}
+
+/* Center the last (coming soon) tile on wider layouts */
+.projects-grid > .project-tile:last-child {
+    /* place in middle column for 3-column grid */
+    grid-column: 2 / 3;
+    justify-self: center;
+    max-width: 420px;
+}
+
+/* If grid is 2 columns, make the coming-soon span both columns to center nicely */
+@media (max-width: 1024px) {
+    .projects-grid > .project-tile:last-child {
+        grid-column: 1 / -1;
+        max-width: 640px;
+    }
+}
+
+/* On mobile it will naturally be full width, no special rules needed */
