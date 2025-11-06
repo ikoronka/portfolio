@@ -20,5 +20,8 @@
   "about": {
     "title": "O mně",
     "description": "Programuju a učím programovat </>"
+  },
+  "projects": {
+    "title": "Projekty"
   }
 }

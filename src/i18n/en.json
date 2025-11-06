@@ -20,6 +20,9 @@
   "about": {
     "title": "About",
     "description": "I code and teach coding </>"
+  },
+  "projects": {
+    "title": "Projects"
   }
 
 }
