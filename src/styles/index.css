@@ -54,6 +54,7 @@ html, body {
   min-height: 100vh; /* Full height inherited from .App */
   display: grid;
   place-items: center;
+  background-color: #120206; /* Ensure each page section matches site background */
 }
 
 /* Top bar styling */
