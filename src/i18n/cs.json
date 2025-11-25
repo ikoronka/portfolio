@@ -23,11 +23,11 @@
   },
   "projects": {
     "title": "Projekty",
-    "itSchool": "Navrhl a vyvinul jsem CRM platformu pro správu IT kurzů pomocí Laravelu. Naučil jsem se spoustu věcí o efektivním webovém vývoji.",
-    "foodApp": "Pracoval jsem v týmu na návrhu aplikace pro video recepty od začátku do konce. Naučil jsem se spoustu o designových principech a týmové práci.",
-    "javaGame": "Vzal jsem textovou adventuru z předchozího semestru a přetvořil ji do vizuální desktopové aplikace. Naučil jsem se spoustu o Javě a základním vývoji her.",
+    "itSchool": "Navrhla a vyvinula jsem CRM platformu pro správu IT kurzů pomocí Laravelu. Naučila jsem se spoustu věcí o efektivním webovém vývoji.",
+    "foodApp": "Pracovala jsem v týmu na návrhu aplikace pro video recepty od začátku do konce. Naučila jsem se spoustu o designových principech a týmové práci.",
+    "javaGame": "Vzala jsem textovou adventuru z předchozího semestru a přetvořila ji do vizuální desktopové aplikace. Naučila jsem se spoustu o Javě a základním vývoji her.",
     "hackathon": "Vývoj aplikace Kreditozrouti pro plánování a objevování kurzů, která studentům pomáhá najít univerzitní kurzy vyhovující jejich rozvrhu s intuitivním rozhraním pro filtrování podle dne, času a fakulty.",
     "dataAnalysis": "Implementace modelů supervizovaného i nesupervizovaného strojového učení (Random Forest, K-Means) v Pythonu pro analýzu behaviorálních dat s dosažením 93% přesnosti klasifikace.",
-    "comingSoon": "Momentálně pracuji na nových a zajímavých projektech. Sledujte!"
+    "comingSoon": "Momentálně pracuji na projektu, který vylepšuje přihlašování na akce školního spolku."
   }
 }
