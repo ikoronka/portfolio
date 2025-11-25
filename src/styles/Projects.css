@@ -52,6 +52,27 @@
     overflow: hidden;
 }
 
+
+/* No-image tile styling */
+/* Placeholder (no image) matches image tile height */
+.media-wrap.no-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.12));
+    color: #FDEDF1;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+
+.centered-text p {
+    font-family: "DM Mono", monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
 .media-wrap img {
     width: 100%;
     height: 100%;
@@ -92,7 +113,6 @@
     transform: translateY(0);
 }
 
-/* Coming soon placeholder */
 .media-wrap.coming-soon {
     display: flex;
     align-items: center;
@@ -100,8 +120,8 @@
     background: rgba(255,255,255,0.04);
     color: #FDEDF1;
     width: 100%;
-    aspect-ratio: 16/9;  /* maintain same aspect ratio as images */
-    min-height: 200px;   /* match the height of image tiles */
+    height: 200px;
+    object-fit: cover;
 }
 
 .coming-text {
@@ -120,6 +140,12 @@
     margin: 0;
     font-family: "DM Mono", monospace;
     text-align: center;
+    /* Ensure consistent height so longer titles don't create a bigger tile "chin" */
+    min-height: 3.2rem; /* roughly two lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* allow up to two lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Responsive design */
@@ -136,27 +162,6 @@
     
     .projects-section {
         padding: 1rem;
-    }
-}
-
-/* Center the last (coming soon) tile on wider layouts */
-.projects-grid > .project-tile:last-child {
-    /* place in middle column for 3-column grid */
-    grid-column: 2 / 3;
-    justify-self: center;
-}
-
-/* If grid is 2 columns, center the coming-soon visually while keeping the same width as a single tile */
-@media (max-width: 1024px) {
-    .projects-grid > .project-tile:last-child {
-        /* span full grid row so we can center an inner box with single-tile width */
-        grid-column: 1 / -1;
-    }
-
-    .projects-grid > .project-tile:last-child .project-content {
-        /* make content the width of one column and center it */
-        max-width: calc(50% - 1rem);
-        margin: 0 auto;
     }
 }
 

@@ -22,7 +22,13 @@
     "description": "I code and teach coding </>"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "itSchool": "I designed and developed a CRM platform for managing IT courses using Laravel. Learned a lot about effective web development.",
+    "foodApp": "I worked in a team to design a recipe video app from start to finish. Learned a lot about design principles and teamwork.",
+    "javaGame": "I took a text-based adventure game from a previous semester and remade it into a visual desktop application. Learned a lot about Java and basic game dev.",
+    "hackathon": "Developed Kreditozrouti, a course scheduling and discovery application that helps students find university courses fitting their timetable with an intuitive filtering interface by day, time, and faculty.",
+    "dataAnalysis": "Implemented supervised and unsupervised machine learning models (Random Forest, K-Means) in Python to analyze behavioral data, achieving 93% precision in personality classification.",
+    "comingSoon": "Currently working on a project improving the sign up process for events at our school club. Stay tuned!"
   }
 
 }
