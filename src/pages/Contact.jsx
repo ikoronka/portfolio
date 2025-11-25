@@ -8,9 +8,9 @@ export default function Contact() {
     const { t } = useTranslation();
 
     const contacts = [
-        { icon: faGoogle, label: 'Gmail', link: 'https://wikipedia.com' },
-        { icon: faGithub, label: 'GitHub', link: 'https://wikipedia.com' },
-        { icon: faLinkedin, label: 'LinkedIn', link: 'https://wikipedia.com' }
+        { icon: faGoogle, label: 'Gmail', link: 'mailto: amelie.engelmaier@gmail.com' },
+        { icon: faGithub, label: 'GitHub', link: 'https://github.com/ikoronka' },
+        { icon: faLinkedin, label: 'LinkedIn', link: 'https://linkedin.com/in/amelie-engelmaierova' }
     ];
 
     return (
