@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function LanguageSelector() {
   const { i18n } = useTranslation();
@@ -10,15 +10,21 @@ export default function LanguageSelector() {
 
   return (
     <div className="language-selector">
-      <button 
-        onClick={() => changeLanguage('en')}
-        className={i18n.language === 'en' ? 'active' : ''}
+      <button
+        onClick={() => changeLanguage("en")}
+        className={i18n.language === "en" ? "active" : ""}
       >
         EN
       </button>
-      <button 
-        onClick={() => changeLanguage('cs')}
-        className={i18n.language === 'cs' ? 'active' : ''}
+      <button
+        onClick={() => changeLanguage("de")}
+        className={i18n.language === "de" ? "active" : ""}
+      >
+        DE
+      </button>
+      <button
+        onClick={() => changeLanguage("cs")}
+        className={i18n.language === "cs" ? "active" : ""}
       >
         CS
       </button>

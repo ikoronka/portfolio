@@ -1,0 +1,33 @@
+{
+  "navigation": {
+    "home": "Start",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "linkedin": "LinkedIn",
+    "email": "E-Mail",
+    "github": "GitHub"
+  },
+  "contact": {
+    "title": "Schreib mir",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden"
+  },
+  "about": {
+    "title": "Über mich",
+    "description": "Ich programmiere und unterrichte Programmieren </>"
+  },
+  "projects": {
+    "title": "Projekte",
+    "itSchool": "Ich habe eine CRM-Plattform zur Verwaltung von IT-Kursen mit Laravel entworfen und entwickelt. Dabei habe ich viel über effiziente Webentwicklung gelernt.",
+    "foodApp": "Ich habe im Team eine Rezeptvideo-App vom ersten Entwurf bis zum Abschluss gestaltet. Dabei habe ich viel über Designprinzipien und Teamarbeit gelernt.",
+    "javaGame": "Ich habe ein Text-Adventure aus einem früheren Semester in eine visuelle Desktop-Anwendung umgewandelt. Dabei habe ich viel über Java und grundlegende Spieleentwicklung gelernt.",
+    "hackathon": "Kreditozrouti entwickelt – eine Anwendung zur Kursplanung und -suche, die Studierenden hilft, passende Universitätskurse für ihren Stundenplan zu finden, mit einer intuitiven Filteroberfläche nach Tag, Zeit und Fakultät.",
+    "dataAnalysis": "Überwachte und unüberwachte ML-Modelle (Random Forest, K-Means) in Python implementiert, um Verhaltensdaten zu analysieren; erreichte 93 % Genauigkeit bei der Persönlichkeitsklassifikation.",
+    "comingSoon": "Ich arbeite derzeit an einem Projekt, das den Anmeldeprozess für Veranstaltungen in unserem Hochschulverein verbessert."
+  }
+}

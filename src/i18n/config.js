@@ -1,29 +1,31 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
-import translationEn from './en.json';
-import translationCs from './cs.json';
+import translationEn from "./en.json";
+import translationCs from "./cs.json";
+import translationDe from "./de.json";
 
 // Define resources
 const resources = {
   en: {
-    translation: translationEn
+    translation: translationEn,
   },
   cs: {
-    translation: translationCs
-  }
+    translation: translationCs,
+  },
+  de: {
+    translation: translationDe,
+  },
 };
 
 // Initialize i18next
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: 'en', // default language
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false // React already safes from XSS
-    }
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "en", // default language
+  fallbackLng: "en",
+  interpolation: {
+    escapeValue: false, // React already safes from XSS
+  },
+});
 
 export default i18n;
