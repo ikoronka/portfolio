@@ -1,7 +1,7 @@
 import React from "react";
 import LanguageSelector from "./LanguageSelector";
 import "../styles/index.css";
-import logo from "../../public/ikoronka.svg";
+import logo from "../images/ikoronka.svg";
 
 export default function TopBar() {
   return (
