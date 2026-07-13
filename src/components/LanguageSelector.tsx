@@ -1,0 +1,32 @@
+import { useTranslation } from "react-i18next";
+
+export default function LanguageSelector() {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  return (
+    <div className="language-selector">
+      <button
+        onClick={() => changeLanguage("en")}
+        className={i18n.language === "en" ? "active" : ""}
+      >
+        EN
+      </button>
+      <button
+        onClick={() => changeLanguage("de")}
+        className={i18n.language === "de" ? "active" : ""}
+      >
+        DE
+      </button>
+      <button
+        onClick={() => changeLanguage("cs")}
+        className={i18n.language === "cs" ? "active" : ""}
+      >
+        CS
+      </button>
+    </div>
+  );
+}
