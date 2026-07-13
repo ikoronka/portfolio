@@ -40,6 +40,7 @@ npm test           # run the Vitest suite
 - New sections/pages get `id="<section>"` for anchor navigation and should read strings via `useTranslation()`, not literals.
 - Keep styling colocated: a new component/page gets its own file in `src/styles/`.
 - Commit messages use [gitmoji](https://gitmoji.dev/) (e.g. `📝 Add file map`), subject line only, no body.
+- Documentation (README, AGENTS.md, comments) should be concise — favor short bullets over prose, and avoid restating what's already obvious from the code.
 
 ## Testing
 
