@@ -9,7 +9,7 @@ Annotated directory listing for agentic tooling. See [AGENTS.md](./AGENTS.md) fo
 ├── tsconfig.json               # TS project references root
 ├── tsconfig.app.json           # TS config for app source (src/)
 ├── tsconfig.node.json          # TS config for Vite/tooling files
-├── netlify.toml                # Netlify build config (npm run build -> dist)
+├── netlify.toml                # Netlify build config (pnpm run build -> dist)
 ├── .nvmrc                      # pinned Node version (22)
 │
 ├── public/                     # static assets copied as-is to dist/

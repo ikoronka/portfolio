@@ -9,14 +9,12 @@ Bilingual (EN/CS/DE) single-page portfolio site. React 18 + TypeScript, built wi
 ## Setup & Commands
 
 ```bash
-npm install        # install dependencies (Node >=22, see .nvmrc)
-npm run dev        # start Vite dev server
-npm run build      # type-check (tsc -b) then production build to dist/
-npm run preview    # preview the production build
-npm test           # run the Vitest suite
+pnpm install        # install dependencies (Node >=22, see .nvmrc)
+pnpm dev            # start Vite dev server
+pnpm build          # type-check (tsc -b) then production build to dist/
+pnpm preview        # preview the production build
+pnpm test           # run the Vitest suite
 ```
-
-> TODO: migrate package manager from npm to pnpm.
 
 ## Architecture
 
@@ -46,7 +44,7 @@ npm test           # run the Vitest suite
 
 - Vitest + React Testing Library + jsdom (`vite.config.ts`, setup in `src/test/setup.ts`).
 - Test files live under `src/test/`.
-- Run `npm test` before committing changes to components or app logic.
+- Run `pnpm test` before committing changes to components or app logic.
 
 ## Reference
 

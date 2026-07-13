@@ -13,17 +13,17 @@ A modern, bilingual personal portfolio website built with React. Showcasing work
 ## Quick Start
 
 ```bash
-npm install
-npm start
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## Available Scripts
 
-- **`npm start`** — Dev server (localhost:3000)
-- **`npm run build`** — Production-ready build
-- **`npm test`** — Run tests with Jest
+- **`pnpm dev`** — Dev server (localhost:3000)
+- **`pnpm run build`** — Production-ready build
+- **`pnpm test`** — Run tests with Vitest
 
 ## Project Structure
 
@@ -60,17 +60,17 @@ Moderní, vícejazyčný osobní web postaven na Reactu. Představuje práci jak
 ## Rychlý Start
 
 ```bash
-npm install
-npm start
+pnpm install
+pnpm dev
 ```
 
 Otevřete [http://localhost:3000](http://localhost:3000) a zobrazte si web v prohlížeči.
 
 ## Dostupné Skripty
 
-- **`npm start`** — Dev server (localhost:3000)
-- **`npm run build`** — Build pro produkci
-- **`npm test`** — Spusťte testy s Jestem
+- **`pnpm dev`** — Dev server (localhost:3000)
+- **`pnpm run build`** — Build pro produkci
+- **`pnpm test`** — Spusťte testy s Vitestem
 
 ## Struktura Projektu
 
