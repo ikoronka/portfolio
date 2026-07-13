@@ -16,6 +16,8 @@ npm run preview    # preview the production build
 npm test           # run the Vitest suite
 ```
 
+> TODO: migrate package manager from npm to pnpm.
+
 ## Architecture
 
 - Single page, no router. `src/App.tsx` renders all sections (`Home`, `About`, `Projects`, `Contact`) in order inside one scroll container; navigation is anchor/hash-based (`#home`, `#about`, ...).
@@ -30,12 +32,14 @@ npm test           # run the Vitest suite
 - i18next + react-i18next, configured in `src/i18n/config.ts`. Languages: `en` (default/fallback), `cs`, `de`.
 - Translation strings live in `src/i18n/{en,cs,de}.json` as parallel hierarchical keys (e.g. `navigation.home`, `projects.itSchool`).
 - When adding or changing copy, update all three JSON files with matching keys — never hardcode user-facing text in a component.
+- For any non-trivial translation (more than a short label), consult the repo owner before writing the change to make sure the tone is right.
 
 ## Conventions
 
 - Components are function components with hooks; no class components.
 - New sections/pages get `id="<section>"` for anchor navigation and should read strings via `useTranslation()`, not literals.
 - Keep styling colocated: a new component/page gets its own file in `src/styles/`.
+- Commit messages use [gitmoji](https://gitmoji.dev/) (e.g. `📝 Add file map`), subject line only, no body.
 
 ## Testing
 
