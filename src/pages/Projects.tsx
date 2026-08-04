@@ -31,7 +31,7 @@ export default function Projects() {
 
                         return (
                             <a
-                                key={index}
+                                key={project.descriptionKey}
                                 href={link}
                                 className="project-row"
                                 target="_blank"
@@ -44,7 +44,7 @@ export default function Projects() {
                                     <h3>{project.title}</h3>
                                     <p className="project-summary">{description}</p>
                                     <span className="project-tags" style={{ color: accent }}>{project.tags.join('   ·   ')}</span>
-                                    <span className="project-link">View project &rarr;</span>
+                                    <span className="project-link">{t('projects.viewProject')}</span>
                                 </div>
                             </a>
                         );
