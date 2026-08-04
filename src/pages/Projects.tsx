@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Server, BrainCircuit, PenTool, Gamepad2, Code2, type LucideIcon } from 'lucide-react';
+import { Server, BrainCircuit, PenTool, Gamepad2, Code2, Home, type LucideIcon } from 'lucide-react';
 import '../styles/Projects.css';
 import { projects } from '../data/projectsData';
 import type { Project } from '../types/project';
@@ -7,6 +7,7 @@ import type { Project } from '../types/project';
 const ACCENTS = ["#E22E57", "#FFAB00", "#009CEA", "#74AF00"];
 
 const CATEGORY_ICONS: Record<string, LucideIcon> = {
+    "PropTech / AI": Home,
     "CRM / Web": Server,
     "Data / ML": BrainCircuit,
     "UX / Design": PenTool,

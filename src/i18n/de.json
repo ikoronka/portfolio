@@ -18,6 +18,7 @@
   },
   "projects": {
     "title": "Projekte",
+    "helvetiSublet": "Ich habe einen Zürcher Wohnungsanzeigen-Aggregator entwickelt, der Vermietungsplattformen durchsucht und mit einem lokalen LLM smarte Filter wie Möblierung oder Geschlechterpräferenz aus Freitextanzeigen extrahiert. Dabei habe ich viel über die Kombination von Regex-Extraktion mit einem LLM-Fallback für unübersichtliche Realdaten gelernt.",
     "itSchool": "Ich habe eine CRM-Plattform zur Verwaltung von IT-Kursen mit Laravel entworfen und entwickelt. Dabei habe ich viel über effiziente Webentwicklung gelernt.",
     "foodApp": "Ich habe im Team eine Rezeptvideo-App vom ersten Entwurf bis zum Abschluss gestaltet. Dabei habe ich viel über Designprinzipien und Teamarbeit gelernt.",
     "javaGame": "Ich habe ein Text-Adventure aus einem früheren Semester in eine visuelle Desktop-Anwendung umgewandelt. Dabei habe ich viel über Java und grundlegende Spieleentwicklung gelernt.",
