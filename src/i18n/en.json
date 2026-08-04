@@ -19,7 +19,7 @@
   "projects": {
     "title": "Projects",
     "viewProject": "View project →",
-    "helvetiSublet": "I built a Zurich apartment listing aggregator that scrapes rental platforms and uses a local LLM to pull smart filters like furnished status and gender preference out of free-text listings. Learned a lot about combining regex extraction with an LLM fallback for messy real-world data.",
+    "helvetiSublet": "When I needed to find an apartment in Zurich myself, I built a listing aggregator to solve it: it scrapes rental platforms and uses a local LLM to pull smart filters like furnished status and gender preference out of free-text listings. Learned a lot about combining regex extraction with an LLM fallback for messy real-world data.",
     "itSchool": "I designed and developed a CRM platform for managing IT courses using Laravel. Learned a lot about effective web development.",
     "foodApp": "I worked in a team to design a recipe video app from start to finish. Learned a lot about design principles and teamwork.",
     "javaGame": "I took a text-based adventure game from a previous semester and remade it into a visual desktop application. Learned a lot about Java and basic game dev.",
