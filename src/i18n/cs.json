@@ -14,10 +14,12 @@
   },
   "about": {
     "title": "O mně",
-    "description": "Programuju a učím programovat </>"
+    "description": "Softwarová inženýrka, která naplno využívá AI </>"
   },
   "projects": {
     "title": "Projekty",
+    "viewProject": "Zobrazit projekt →",
+    "helvetiSublet": "Vytvořila jsem agregátor nabídek bytů v Curychu, který stahuje data z pronajímacích platforem a pomocí lokálního LLM z volného textu inzerátů vytahuje chytré filtry jako zařízenost bytu nebo preference pohlaví. Naučila jsem se hodně o kombinaci extrakce pomocí regulárních výrazů se záložním LLM pro nepřehledná reálná data.",
     "itSchool": "Navrhla a vyvinula jsem CRM platformu pro správu IT kurzů pomocí Laravelu. Naučila jsem se spoustu věcí o efektivním webovém vývoji.",
     "foodApp": "Pracovala jsem v týmu na návrhu aplikace pro video recepty od začátku do konce. Naučila jsem se spoustu o designových principech a týmové práci.",
     "javaGame": "Vzala jsem textovou adventuru z předchozího semestru a přetvořila ji do vizuální desktopové aplikace. Naučila jsem se spoustu o Javě a základním vývoji her.",
