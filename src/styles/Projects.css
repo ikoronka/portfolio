@@ -49,18 +49,9 @@
     gap: 0.9rem;
 }
 
-.project-mark-ring {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 2px solid;
-}
-
-.project-category {
-    font-family: "DM Mono", monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+.project-mark-icon {
+    width: 56px;
+    height: 56px;
 }
 
 .project-info {
