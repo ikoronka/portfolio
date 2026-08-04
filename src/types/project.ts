@@ -1,6 +1,7 @@
 export interface Project {
   title: string;
-  image: string | null;
+  category: string;
+  tags: string[];
   link: string | null;
   descriptionKey: string;
 }

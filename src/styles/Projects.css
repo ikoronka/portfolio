@@ -5,6 +5,9 @@
     justify-content: center;
     padding: 2rem;
     color: #FDEDF1;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .projects-section h1 {
@@ -12,157 +15,102 @@
     font-family: "DM Mono", monospace;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
+.projects-list {
+    display: flex;
+    flex-direction: column;
     width: 100%;
 }
 
-.project-tile {
+.project-row {
     text-decoration: none;
     color: inherit;
-    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.project-tile:hover {
-    transform: translateY(-10px);
+.project-row:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
-.project-content {
-    background: rgba(255, 255, 255, 0.1);
+.project-mark {
+    width: 42%;
+    flex-shrink: 0;
+    aspect-ratio: 16 / 10;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.project-content img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-}
-
-.media-wrap {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-}
-
-
-/* No-image tile styling */
-/* Placeholder (no image) matches image tile height */
-.media-wrap.no-image {
-    position: relative;
+    border: 1px solid;
+    background: rgba(255, 255, 255, 0.03);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.12));
-    color: #FDEDF1;
-    width: 100%;
-    height: 200px;
-    text-align: center;
+    gap: 0.9rem;
 }
 
-.centered-text p {
+.project-mark-ring {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid;
+}
+
+.project-category {
     font-family: "DM Mono", monospace;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0;
-}
-.media-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
-.project-tile:hover .media-wrap img {
-    transform: scale(1.03);
-}
-
-/* Overlay shown on hover */
-.overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+.project-info {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-    color: #FDEDF1;
-    /* stronger, more readable overlay */
-    background: rgba(0,0,0,0.78);
-    opacity: 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateY(10px);
-    font-family: "DM Mono", monospace;
-    /* additive shadow to make text pop */
-    text-shadow: 0 6px 18px rgba(0,0,0,0.9);
-    box-shadow: inset 0 30px 60px rgba(0,0,0,0.5), 0 10px 30px rgba(0,0,0,0.6);
+    flex-direction: column;
+    gap: 0.9rem;
+    flex: 1;
 }
 
-.project-tile:hover .overlay {
-    opacity: 0.98;
-    transform: translateY(0);
-}
-
-.media-wrap.coming-soon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.04);
-    color: #FDEDF1;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.coming-text {
+.project-info h3 {
     font-family: "DM Mono", monospace;
     font-size: 1.5rem;
-    font-weight: 500;
-}
-
-/* Ensure all project tiles have the same width */
-.project-tile {
-    width: 100%;
-}
-
-.project-content h3 {
-    padding: 1rem;
+    font-weight: 400;
     margin: 0;
-    font-family: "DM Mono", monospace;
-    text-align: center;
-    /* Ensure consistent height so longer titles don't create a bigger tile "chin" */
-    min-height: 3.2rem; /* roughly two lines */
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* allow up to two lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
-/* Responsive design */
-@media (max-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.project-summary {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 520px;
+    color: #cbb3ba;
+}
+
+.project-tags {
+    font-family: "DM Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.project-link {
+    font-family: "DM Mono", monospace;
+    font-size: 0.8rem;
+    color: #FDEDF1;
+    margin-top: 0.25rem;
 }
 
 @media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .project-row,
+    .project-row:nth-child(even) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
     }
-    
+
+    .project-mark {
+        width: 100%;
+    }
+
     .projects-section {
         padding: 1rem;
     }
 }
-
-/* On mobile it will naturally be full width, no special rules needed */
