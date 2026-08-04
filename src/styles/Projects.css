@@ -101,6 +101,12 @@
     }
 
     .projects-section {
-        padding: 1rem;
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .projects-section {
+        padding: 1.75rem 1.25rem;
     }
 }
