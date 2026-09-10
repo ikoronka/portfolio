@@ -73,14 +73,22 @@ async function drain() {
         method: "POST", body: fd, headers: { Authorization: "Bearer " + token() }
       });
       if (r.ok || r.status === 413) await c.delete(req);   // 413 will never succeed
-      if (!r.ok) throw new Error("HTTP " + r.status);
+      if (!r.ok) {
+        const err = new Error(r.status === 401
+          ? "wrong token — tap here to re-enter" : "HTTP " + r.status);
+        err.status = r.status;      // the recording stays queued either way
+        throw err;
+      }
     }
     wait = 5000;
     await say(await depth() ? "" : "filed ✓");
   } catch (e) {
-    await say(String(e.message || e) + " — retrying");
-    wait = Math.min(wait * 2, 300000);
-    setTimeout(drain, wait);
+    // Retrying a rejected token just fails forever, so don't. Everything else backs off.
+    await say(String(e.message || e) + (e.status === 401 ? "" : " — retrying"));
+    if (e.status !== 401) {
+      wait = Math.min(wait * 2, 300000);
+      setTimeout(drain, wait);
+    }
   } finally { busy = false; }
 }
 
@@ -111,9 +119,20 @@ rec.onclick = async () => {
 document.onvisibilitychange = () => document.hidden && mr && mr.stop();
 // Tap the status line to set or replace the token. Without this the page only asks
 // for it mid-upload, which reads like an error on first run.
-out.onclick = () => {
+out.onclick = async () => {
   localStorage.removeItem("token");
-  try { token(); say("token saved"); drain(); } catch { say("tap here to enter your token"); }
+  let t;
+  try { t = token(); } catch { return say("tap here to enter your token"); }
+  await say("checking…");
+  try {
+    // Verify against a real authed endpoint now, so a typo surfaces here and not after
+    // you have already spoken two minutes into the void.
+    const r = await fetch(API + "/api/v1/voice/pending",
+                          { headers: { Authorization: "Bearer " + t } });
+    if (!r.ok) { localStorage.removeItem("token"); return say("token rejected — tap to retry"); }
+    await say("token ok ✓");
+    drain();
+  } catch { await say("can't reach the server — token kept, will verify on upload"); }
 };
 addEventListener("online", drain);
 navigator.serviceWorker?.register("sw.js");
