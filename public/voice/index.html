@@ -1,0 +1,116 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Voice</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111">
+<style>
+  :root { color-scheme: dark }
+  body { margin:0; height:100dvh; display:flex; flex-direction:column;
+         align-items:center; justify-content:center; gap:1.5rem;
+         background:#111; color:#eee; font:16px system-ui, sans-serif }
+  #rec { width:60vmin; height:60vmin; border-radius:50%; border:none; color:#fff;
+         background:#2d6cdf; font-size:1.4rem; font-weight:600 }
+  #rec[data-on] { background:#c33 }
+  #rec:disabled { background:#444 }
+  select, button { font:inherit; padding:.5rem; border-radius:.5rem }
+  #out { min-height:1.4em; opacity:.7; text-align:center; padding:0 1rem }
+</style>
+
+<select id="lang"><option value="cs">Čeština</option><option value="en">English</option>
+<option value="de">Deutsch</option></select>
+<button id="rec">Record</button>
+<div id="out"></div>
+
+<script>
+const API = "https://voice.ikoronka.com";   // the VPS
+const Q = "voice-queue";
+const MIME = ["audio/webm;codecs=opus", "audio/mp4"]
+  .find(t => window.MediaRecorder && MediaRecorder.isTypeSupported(t));
+
+lang.value = localStorage.lang || "cs";
+lang.onchange = () => localStorage.lang = lang.value;
+
+function token() {
+  if (!localStorage.token) localStorage.token = prompt("Bearer token") || "";
+  if (!localStorage.token) throw new Error("no token");
+  return localStorage.token;
+}
+
+async function depth() {
+  return (await (await caches.open(Q)).keys()).length;
+}
+async function say(msg) {
+  const n = await depth();
+  out.textContent = (msg || "") + (n ? `  ·  ${n} waiting to upload` : "");
+}
+
+// ---- the queue. Cache API stores Blobs durably, which is the whole job. ----
+async function enqueue(blob) {
+  const id = crypto.randomUUID();
+  await (await caches.open(Q)).put(new Request("/queued/" + id), new Response(blob, {
+    headers: { "x-id": id, "x-lang": lang.value, "x-mime": blob.type || MIME,
+               "x-at": new Date().toISOString() }
+  }));
+}
+
+let busy = false, wait = 5000;
+async function drain() {
+  if (busy || !navigator.onLine) return;
+  busy = true;
+  const c = await caches.open(Q);
+  try {
+    for (const req of await c.keys()) {
+      const res = await c.match(req), h = k => res.headers.get("x-" + k);
+      const fd = new FormData();
+      fd.append("audio", await res.blob(), "audio");
+      fd.append("idempotency_key", h("id"));
+      fd.append("language", h("lang"));
+      fd.append("mime", h("mime"));
+      fd.append("recorded_at", h("at"));
+      await say("uploading…");
+      const r = await fetch(API + "/api/v1/voice/upload", {
+        method: "POST", body: fd, headers: { Authorization: "Bearer " + token() }
+      });
+      if (r.ok || r.status === 413) await c.delete(req);   // 413 will never succeed
+      if (!r.ok) throw new Error("HTTP " + r.status);
+    }
+    wait = 5000;
+    await say(await depth() ? "" : "filed ✓");
+  } catch (e) {
+    await say(String(e.message || e) + " — retrying");
+    wait = Math.min(wait * 2, 300000);
+    setTimeout(drain, wait);
+  } finally { busy = false; }
+}
+
+// ---- recording ----
+let mr, lock;
+rec.onclick = async () => {
+  if (mr) return mr.stop();
+  if (!MIME) return say("this browser cannot record");
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+  const parts = [];
+  mr = new MediaRecorder(stream, { mimeType: MIME });
+  mr.ondataavailable = e => parts.push(e.data);
+  mr.onstop = async () => {
+    stream.getTracks().forEach(t => t.stop());
+    lock = await lock?.release();
+    mr = null; rec.removeAttribute("data-on"); rec.textContent = "Record";
+    await enqueue(new Blob(parts, { type: MIME }));
+    await say("queued");
+    drain();
+  };
+  mr.start();
+  lock = await navigator.wakeLock?.request("screen").catch(() => null);
+  rec.dataset.on = "1"; rec.textContent = "Stop";
+  say("recording");
+};
+
+// Android can kill a backgrounded PWA outright: treat app-switching as stop-and-flush.
+document.onvisibilitychange = () => document.hidden && mr && mr.stop();
+out.onclick = () => { localStorage.removeItem("token"); say("token cleared"); };
+addEventListener("online", drain);
+navigator.serviceWorker?.register("sw.js");
+say(); drain();
+</script>
