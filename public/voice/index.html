@@ -109,8 +109,13 @@ rec.onclick = async () => {
 
 // Android can kill a backgrounded PWA outright: treat app-switching as stop-and-flush.
 document.onvisibilitychange = () => document.hidden && mr && mr.stop();
-out.onclick = () => { localStorage.removeItem("token"); say("token cleared"); };
+// Tap the status line to set or replace the token. Without this the page only asks
+// for it mid-upload, which reads like an error on first run.
+out.onclick = () => {
+  localStorage.removeItem("token");
+  try { token(); say("token saved"); drain(); } catch { say("tap here to enter your token"); }
+};
 addEventListener("online", drain);
 navigator.serviceWorker?.register("sw.js");
-say(); drain();
+if (localStorage.token) { say(); drain(); } else say("tap here to enter your token");
 </script>
